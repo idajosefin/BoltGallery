@@ -1,0 +1,198 @@
+/**
+ * BoltGallery CSS 
+ */
+ 
+ * {margin: 0; padding: 0;}
+
+.boltgallery {
+	width: 100%; 
+}
+
+.boltgallery ul {
+	overflow: hidden;
+}
+
+/*Image styles*/
+.boltgallery ul li {
+	float: left;
+	padding: 2px;
+	margin: 10px; 
+	background: #fff;
+	list-style-type: none;
+	position: relative;
+	cursor: pointer;
+}
+
+.boltgallery ul li img:hover {
+	opacity: 0.9;
+}
+
+/*Image titles*/
+.boltgallery .image_title {
+	width: 100%; height: auto;
+	position: absolute;
+	top: 0; left: 0;
+	display: table;
+	/*Hover effect - default state*/
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.boltgallery .title {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 14px;
+	text-align: center;
+	padding: 5px 0px 5px 0px; 
+	margin-top: 45%;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+	/*display: table-cell;*/
+	vertical-align: middle;
+	/*Hover effect - default state*/
+	transform: scale(0.2);
+	transition: all 0.25s;
+}
+
+/*Hover states*/
+.boltgallery li:hover .image_title {
+	opacity: 1;
+}
+
+.boltgallery li:hover .title {
+	transform: scale(1);
+}
+
+/*boltgallery element style*/
+.boltgallery_backdrop {
+	background: rgba(0, 0, 0, 0.9);
+	position: fixed;
+	top: 0; left: 0; right: 0; bottom: 0;
+}
+
+/*The larger image*/
+.boltgallery_canvas {
+	background: white;
+	position: fixed;
+	top: 0; left: 0; 
+	height: auto;
+	margin: 0px auto !important;
+	max-width: 100%;
+}
+
+.boltgallery_canvas img {
+	max-width: 100% !important; 
+	max-width: 1100px;
+	box-shadow: 0 0 20px 5px black;
+}
+
+/*A separate class for loading GIF, for easy Jquery handling*/
+.boltgallery_canvas.loading {
+	background: url("img/loader.gif") center center no-repeat;
+}
+
+/*boltgallery Controls*/
+.boltgallery_controls {
+	max-width: 400px; 
+	background: rgba(0, 0, 0, 0.75);
+	position: fixed;
+	color: white;
+	bottom: 10px;
+	left: 0; right: 0; margin: 0 auto; 
+}
+
+.boltgallery_controls span {
+	line-height: 30px;
+	height: 30px;
+}
+
+.boltgallery_controls span.inactive {
+	opacity: 0.25;
+}
+
+.boltgallery_previous, .boltgallery_next {
+	position: absolute;
+	top: 0;
+	padding: 0px 12px;
+	background: black;
+	cursor: pointer;
+}
+
+.boltgallery_previous {
+	left: 0;
+	border-right: 1px solid #1a1a1a;
+}
+
+.boltgallery_next {
+	right: 0;
+	border-left: 1px solid #1a1a1a;
+}
+
+.boltgallery_title {
+	text-align: center;
+	display: block;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.thumbnails .img-circle {
+    border-radius: 50%;
+}
+
+.thumbnails {
+  position: relative;
+  min-width: 200px;
+  min-height: 200px;
+  overflow: hidden;
+}
+
+.thumbnails img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+}
+
+.thumbnails img.portrait {
+  width: 100%;
+  height: auto;
+}
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: 500px) {
+
+	.thumbnails {
+	  position: relative;
+	  min-width: 300px;
+	  width: 100%;
+	  overflow: hidden;
+	}
+
+	.thumbnails img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: auto;
+    width: 100%;
+    transform: translate(-50%, -50%);
+	}
+
+	.boltgallery ul li {
+	width: 100%;
+	margin: 5px 0px;
+	}
+
+	.thumbnails img.portrait {
+  	width: 100%;
+  	height: auto;
+  	min-width: 300px;
+	min-height: 300px;
+	}
+}
+
+
+
